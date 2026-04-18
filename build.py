@@ -303,7 +303,7 @@ PAGE_TEMPLATE = """\
       <h1><span class="bay">BAY</span>by-Led Weaning</h1>
       <p class="header-sub">
         <i class="fa-solid fa-utensils"></i>
-        Bay Area Restaurant Reviews for Tiny Foodies
+        Bay Area Restaurant Reviews by Tiny Foodies
         <i class="fa-solid fa-baby"></i>
       </p>
       <div class="header-divider"></div>
