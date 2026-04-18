@@ -23,7 +23,7 @@ Edit [`data/restaurants.csv`](data/restaurants.csv). Columns:
 python3 build.py
 ```
 
-Outputs to `_site/`. Geocoding results are cached in `data/coords_cache.json` — commit the cache so builds are fast and reproducible. To override a coordinate (e.g. for a restaurant that geocodes incorrectly), edit the cache JSON directly.
+Outputs to `docs/`. Geocoding results are cached in `data/coords_cache.json` — commit the cache so builds are fast and reproducible. To override a coordinate (e.g. for a restaurant that geocodes incorrectly), edit the cache JSON directly.
 
 ## First-time setup
 
@@ -37,7 +37,7 @@ This downloads Leaflet, Font Awesome, and the Google Fonts (Fraunces, Caveat, Lo
 
 ## Deploying
 
-Build locally and commit `_site/` to the repo. GitHub Pages serves the site from the `_site` folder on the `main` branch.
+Build locally and commit `docs/` to the repo. In the GitHub Pages settings, set the source to the `docs` folder on the `main` branch.
 
 ## Third-party licenses
 

@@ -11,7 +11,7 @@ import urllib.request
 from pathlib import Path
 
 CSV_PATH = Path("data/restaurants.csv")
-OUTPUT_DIR = Path("_site")
+OUTPUT_DIR = Path("docs")
 OUTPUT_FILE = OUTPUT_DIR / "index.html"
 CACHE_PATH = Path("data/coords_cache.json")
 
