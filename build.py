@@ -67,8 +67,15 @@ def make_card(r: dict, idx: int) -> str:
         badges += yn_badge('<i class="fa-solid fa-chair"></i> High Chairs', r["high_chairs"])
     if r["inglesina_safe"].strip():
         badges += yn_badge('<i class="fa-solid fa-baby"></i> Inglesina Safe', r["inglesina_safe"])
+    img_file = r.get("image", "").strip()
+    img_html = (
+        f'<figure class="card-img"><img src="images/{html.escape(img_file)}"'
+        f' alt="{html.escape(name)}" loading="lazy" /></figure>'
+        if img_file else ""
+    )
     return f"""
     <article class="card" data-index="{idx}">
+      {img_html}
       <h2 class="card-title">
         <a href="{url}" target="_blank" rel="noopener">{html.escape(name)} <i class="fa-solid fa-location-dot pin"></i></a>
       </h2>
@@ -200,10 +207,21 @@ PAGE_TEMPLATE = """\
       padding: 1.75rem 2rem;
       border-left: 4px solid var(--accent);
       box-shadow: 0 2px 8px rgba(160,120,40,0.08), 0 8px 28px rgba(160,120,40,0.1);
+      overflow: hidden;
       opacity: 0;
       transform: translateY(20px);
       animation: fadeUp 0.55s cubic-bezier(0.22, 1, 0.36, 1) forwards;
       transition: transform 0.2s ease, box-shadow 0.2s ease, border-left-color 0.15s ease;
+    }}
+
+    .card-img {{
+      margin: -1.75rem -2rem 1.25rem;
+    }}
+
+    .card-img img {{
+      width: 100%;
+      height: auto;
+      display: block;
     }}
 
     .card:hover, .card.highlighted {{
@@ -395,6 +413,8 @@ def build():
 
     OUTPUT_DIR.mkdir(exist_ok=True)
     shutil.copytree(Path("vendor"), OUTPUT_DIR / "vendor", dirs_exist_ok=True)
+    if Path("images").exists():
+        shutil.copytree(Path("images"), OUTPUT_DIR / "images", dirs_exist_ok=True)
     cards_html = "".join(card_parts)
     OUTPUT_FILE.write_text(
         PAGE_TEMPLATE.format(cards=cards_html, markers_json=json.dumps(markers)),
