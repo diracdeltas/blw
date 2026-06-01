@@ -1,19 +1,23 @@
 {
-  "Yuanbao Jiaozi": {
-    "lat": 37.7635358,
-    "lng": -122.4806711
+  "Imperial Garden Seafood Restaurant": {
+    "lat": 37.7284618,
+    "lng": -122.4042479
   },
-  "Harbin Hot Springs": {
-    "lat": 38.78774010844646,
-    "lng": -122.65381605897731
+  "Sushi Easy": {
+    "lat": 37.7558203,
+    "lng": -122.4208567
+  },
+  "Dumpling Home": {
+    "lat": 37.775869,
+    "lng": -122.4226658
   },
   "My Father\u2019s Kitchen": {
     "lat": 37.7850458,
     "lng": -122.439978
   },
-  "Dumpling Home": {
-    "lat": 37.775869,
-    "lng": -122.4226658
+  "Yuanbao Jiaozi": {
+    "lat": 37.7635358,
+    "lng": -122.4806711
   },
   "Ebisu": {
     "lat": 37.7644479,
@@ -23,8 +27,5 @@
     "lat": 37.7813547,
     "lng": -122.4609009
   },
-  "Sushi Easy": {
-    "lat": 37.7558203,
-    "lng": -122.4208567
-  }
+  "Harbin Hot Springs": null
 }
