@@ -15,6 +15,12 @@ OUTPUT_DIR = Path("docs")
 OUTPUT_FILE = OUTPUT_DIR / "index.html"
 CACHE_PATH = Path("data/coords_cache.json")
 
+# Manual coordinate overrides — take precedence over geocoding and the cache.
+OVERRIDES = {
+    "Pang": {"lat": 37.7637699, "lng": -122.466458},
+    "Harbin Hot Springs": {"lat": 38.7864047, "lng": -122.6518822},
+}
+
 
 def load_cache() -> dict:
     if CACHE_PATH.exists():
@@ -27,6 +33,8 @@ def save_cache(cache: dict) -> None:
 
 
 def geocode(name: str, cache: dict) -> dict | None:
+    if name in OVERRIDES:
+        return OVERRIDES[name]
     if name in cache:
         return cache[name]
     query = urllib.parse.quote_plus(f"{name} San Francisco CA")

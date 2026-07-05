@@ -27,5 +27,16 @@
     "lat": 37.7813547,
     "lng": -122.4609009
   },
-  "Harbin Hot Springs": null
+  "Tarragon Cafe": {
+    "lat": 37.7713117,
+    "lng": -122.4301572
+  },
+  "Cato's Ale House": {
+    "lat": 37.824968,
+    "lng": -122.254583
+  },
+  "Pizzeria Violetta": {
+    "lat": 37.8301052,
+    "lng": -122.247712
+  }
 }
